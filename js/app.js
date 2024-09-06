@@ -78,3 +78,58 @@ function reColorParagraphs() {
 }
 
 
+//* Getting text from a input box
+
+let firstName = document.getElementById("fName");
+let signUpButton = document.getElementById("completeSignUp");
+let fNameInfo = "";
+//* to get text from a input box use ".value" 
+//console.log(firstName.value);
+
+//? This event listener is consistenly watching input changes
+// firstName.addEventListener("input", () => {
+//     fNameInfo = firstName.value
+//     console.log(fNameInfo);
+// })
+
+//? This eventListener will run if a BUtton is pressed.
+signUpButton.addEventListener("click", () => {
+    
+
+    if (firstName.value == false) {
+        confirm(" Can't submit an empty value")
+    } else {
+        fNameInfo = firstName.value;
+        console.log(fNameInfo);
+    }
+})
+
+
+
+//! CREATING ELEMENTS and REMOVING
+
+//? Creating Elements
+let paragraphFirstBox = document.createElement("p");
+paragraphFirstBox.innerHTML = "Hello World!"
+console.log(paragraphFirstBox);
+let divSecondBox = document.createElement("div")
+console.log(divSecondBox);
+
+
+//? Sending these created elements to the INDEX.html page
+let divFirstBox = document.querySelector(".firstBox")
+console.log(divFirstBox);
+//* APPEND
+divFirstBox.append(paragraphFirstBox);
+
+//? ADding another Column to a row class
+let creationRow = document.querySelector(".creationOfelements .row");
+console.log(creationRow);
+
+creationRow.append(divSecondBox);
+
+//! Add and remove classes for styling purposes
+
+divSecondBox.classList.add("col-4");
+
+divFirstBox.classList.remove("d-none");
